@@ -61,10 +61,9 @@ const processSearch = (dataLimit) =>{
 
 // handle search button click
 document.getElementById('btn-search').addEventListener('click', function(){
-    console.log('sdkafjsdklfh');
-    searchField.value = '';
     // start loader
     processSearch(10);
+    searchField.value = '';
 })
 
 // search input field enter key handler
