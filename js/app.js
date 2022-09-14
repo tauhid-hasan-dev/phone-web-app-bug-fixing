@@ -52,18 +52,19 @@ const displayPhones = (phones, dataLimit) =>{
     toggleSpinner(false);
 }
 
+let savedText = '';
 const processSearch = (dataLimit) =>{
     toggleSpinner(true);
-    const searchText = searchField.value;
+    const searchText = searchField.value || savedText;
+    savedText = searchText;
     loadPhones(searchText, dataLimit);
-    
+    searchField.value = '';
 }
 
 // handle search button click
 document.getElementById('btn-search').addEventListener('click', function(){
     // start loader
     processSearch(10);
-    searchField.value = '';
 })
 
 // search input field enter key handler
